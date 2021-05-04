@@ -57,7 +57,6 @@ function Validation() {
   }
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
     if (oneTimeRef.current === true) return
     const code = 'adadadadadadad'
     if (typeof code !== 'string') return
@@ -104,7 +103,7 @@ function Validation() {
               ref={recaptchaRef}
               size="invisible"
               theme="dark"
-              sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? ''}
+              sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
             />
           )}
 

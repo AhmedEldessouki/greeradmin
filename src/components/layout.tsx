@@ -4,7 +4,6 @@ import Nav from './nav/nav'
 export default function Layout({children}: {children: React.ReactNode}) {
   const [isEmulatorActive, setIsEmulatorActive] = useState('')
   useEffect(() => {
-    if (typeof window === 'undefined') return
     setIsEmulatorActive(window.localStorage.getItem('isEmulatorActive') ?? '')
   }, [])
 

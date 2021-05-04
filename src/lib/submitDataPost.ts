@@ -36,7 +36,7 @@ const uploadImage = async (
     error: undefined,
   }
   await new Promise((resolve, reject) => {
-    const url = `https://api.cloudinary.com/v1_1/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/upload`
+    const url = `https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/upload`
     const xhr = new XMLHttpRequest()
     const fd = new FormData()
     xhr.open('POST', url, true)

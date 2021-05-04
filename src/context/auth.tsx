@@ -9,8 +9,10 @@ type Credentials = {
 }
 type ResponseType = {user?: firebase.auth.UserCredential; error?: string}
 type AuthContextType = {
-  user?: firebase.User
-  setUser: React.Dispatch<React.SetStateAction<firebase.User | undefined>>
+  user: firebase.User | null | undefined
+  setUser: React.Dispatch<
+    React.SetStateAction<firebase.User | null | undefined>
+  >
 }
 
 const AuthContext = createContext<AuthContextType>({
@@ -21,7 +23,7 @@ const AuthContext = createContext<AuthContextType>({
 AuthContext.displayName = 'AuthContext'
 
 function AuthProvider({children}: {children: React.ReactNode}) {
-  const [user, setUser] = useState<firebase.User>()
+  const [user, setUser] = useState<firebase.User | null | undefined>(null)
 
   const value = {
     user,
@@ -31,8 +33,39 @@ function AuthProvider({children}: {children: React.ReactNode}) {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }
 
+async function signIn(credentials: Credentials) {
+  const response: ResponseType = {user: undefined, error: undefined}
+  await auth
+    .signInWithEmailAndPassword(credentials.email, credentials.password)
+    .then(
+      res => {
+        response.user = res
+        notify(
+          '👋🏻',
+          `Welcome, ${res.user?.displayName && res.user.displayName}!`,
+          {
+            color: 'var(--lightGray)',
+          },
+        )
+        console.log(res.user)
+      },
+      (err: Error) => {
+        response.error = err.message
+        notify('❌', `SignIn Failed!`, {
+          color: 'var(--red)',
+        })
+      },
+    )
+    .catch((err: Error) => {
+      response.error = err.message
+      notify('❌', `SignIn Failed!`, {
+        color: 'var(--red)',
+      })
+    })
+  return response
+}
 function useAuth() {
-  const {user, setUser} = useContext<AuthContextType>(AuthContext)
+  const {user, setUser} = useContext(AuthContext)
 
   if (
     // eslint-disable-next-line no-constant-condition
@@ -45,53 +78,22 @@ function useAuth() {
   }
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
-    if (!auth?.currentUser) return
+    if (!auth.currentUser) return
 
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         return setUser(currentUser)
       }
-      return setUser(undefined)
+      return setUser(null)
     })
   }, [setUser, user])
-  async function signIn(credentials: Credentials) {
-    const response: ResponseType = {user: undefined, error: undefined}
-    await auth
-      .signInWithEmailAndPassword(credentials.email, credentials.password)
-      .then(
-        res => {
-          response.user = res
-          notify(
-            '👋🏻',
-            `Welcome, ${res.user?.displayName && res.user.displayName}!`,
-            {
-              color: 'var(--lightGray)',
-            },
-          )
-          if (res.user) setUser(res.user)
-        },
-        (err: Error) => {
-          response.error = err.message
-          notify('❌', `SignIn Failed!`, {
-            color: 'var(--red)',
-          })
-        },
-      )
-      .catch((err: Error) => {
-        response.error = err.message
-        notify('❌', `SignIn Failed!`, {
-          color: 'var(--red)',
-        })
-      })
-    return response
-  }
+
   async function signOut() {
     notify('👋🏻', `Good Bye, ${user?.displayName && user.displayName}!`, {
       color: 'var(--lightGray)',
     })
     if (auth?.currentUser) await auth.signOut()
-    setUser(undefined)
+    setUser(null)
   }
 
   async function signUp(newUser: Credentials) {

@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 
 import {mqMax} from '../../shared/utils'
@@ -12,7 +12,6 @@ const $NavItemsContainer = styled.div`
 
   ${mqMax.phoneLarge} {
     max-height: 100vh;
-    flex-direction: column;
     align-items: flex-start !important;
     gap: 10px;
     justify-content: space-around;
@@ -25,35 +24,22 @@ const $NavItemsContainer = styled.div`
 `
 
 function NavItems({
-  isSubMenuOpen,
-  setOpenSubMenu,
   signOut,
   user,
 }: {
-  isSubMenuOpen: boolean
-  setOpenSubMenu: React.Dispatch<React.SetStateAction<boolean>>
   signOut: () => Promise<void> | null
   user: boolean
 }) {
-  const [menuHeight, setMenuHeight] = useState(0)
-
   return (
     <>
       <$NavItemsContainer>
         <Item href="/" title="Home" />
-        <div style={{display: 'flex', flexDirection: 'column'}}>
-          <Item
-            onClick={() => {
-              setOpenSubMenu(!isSubMenuOpen)
-              setMenuHeight(0)
-            }}
-            title="Works"
-            direction={isSubMenuOpen ? 'down' : 'left'}
-          />
-        </div>
-        <Item href="/" title="Reels" />
-        <Item href="/" title="Contact" />
-        {user && <Item onClick={signOut} title="SignOut" />}
+        {user && (
+          <>
+            <Item href="/control-unit" title="Control Unit" />
+            <Item onClick={signOut} title="SignOut" />
+          </>
+        )}
       </$NavItemsContainer>
     </>
   )

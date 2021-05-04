@@ -4,9 +4,9 @@ import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogTitle from '@material-ui/core/DialogTitle'
+import {MyResponseType} from '../../../types/api'
 import {useAuth} from '../../context/auth'
 import {$Warning} from '../../shared/utils'
-import type {MyResponseType} from '../../types/api'
 import {$Field} from './sharedCss/field'
 
 export default function ConfirmPassword({
