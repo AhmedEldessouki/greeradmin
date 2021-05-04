@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import {useAuth} from '../context/auth'
 import User from '../components/user/user'
 import {mqMax} from '../shared/utils'
+import {auth} from '../lib/firebase'
 
 const $Container = styled.div`
   display: flex;
@@ -40,7 +41,20 @@ const $ButtonContainer = styled.div`
   }
 `
 function Dashboard() {
-  const {user} = useAuth()
+  const {user, setUser} = useAuth()
+  React.useEffect(() => {
+    if (!auth.currentUser) return
+
+    auth.onAuthStateChanged(currentUser => {
+      console.log('checking', currentUser)
+      if (currentUser) {
+        console.log('passed', currentUser)
+        return setUser(currentUser)
+      }
+      return setUser(null)
+    })
+    console.log(user)
+  }, [setUser, user])
 
   return (
     <Layout>
