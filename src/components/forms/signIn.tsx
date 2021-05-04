@@ -26,7 +26,7 @@ const SignInForm = ({
   showDialog: boolean
   setShowDialog: React.Dispatch<React.SetStateAction<boolean>>
 }) => {
-  const {signIn} = useAuth()
+  const {signIn, setUser} = useAuth()
   const [forgetPassword, setForgetPassword] = useState(false)
   const [signInFailed, setSignInFailed] = useState('')
   const [isPending, setPending] = useState(false)
@@ -36,7 +36,6 @@ const SignInForm = ({
   const closeDialog = () => setShowDialog(false)
 
   useEffect(() => {
-    if (typeof window === 'undefined') return
     setLoad(true)
     // eslint-disable-next-line consistent-return
     return () => {
@@ -72,11 +71,11 @@ const SignInForm = ({
       return
     }
 
-    const {error} = await signIn(credentials)
-
+    const {user, error} = await signIn(credentials)
     if (error) {
       setSignInFailed(error)
     }
+    setUser(user?.user)
     setPending(false)
   }
 
@@ -131,7 +130,7 @@ const SignInForm = ({
                 ref={recaptchaRef}
                 size="invisible"
                 theme="dark"
-                sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? ''}
+                sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
               />
             )}
             <DialogActions
