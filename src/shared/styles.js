@@ -17,7 +17,6 @@ export const globalStyles = (
         --fontXs: 14px;
 
         --navHeight: 50px;
-        --footerHeight: 75px;
 
         --roundness: 3px;
         --opacity: 0.3;
@@ -44,7 +43,7 @@ export const globalStyles = (
       }
       body,
       main {
-        min-height: calc(96vh - var(--navHeight) - var(--footerHeight));
+        min-height: calc(96vh - var(--navHeight));
       }
       h1 {
         font-size: clamp(1em, 1em + 2vw, 3em);
