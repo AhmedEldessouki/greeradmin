@@ -137,7 +137,7 @@ function SignUpForm({
           ref={recaptchaRef}
           size="invisible"
           theme="dark"
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? ''}
+          sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
         />
         <DialogContent style={{paddingTop: '0'}}>
           <$Field>

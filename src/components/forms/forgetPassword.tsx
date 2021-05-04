@@ -82,7 +82,7 @@ function ForgetPassword({onCancel}: {onCancel: () => void}) {
         <ReCAPTCHA
           ref={recaptchaRef}
           size="invisible"
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY ?? ''}
+          sitekey={process.env.REACT_APP_RECAPTCHA_KEY ?? ''}
         />
         <DialogContent style={{paddingTop: '0'}}>
           <$Field>
