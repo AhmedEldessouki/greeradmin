@@ -9,7 +9,7 @@ import ConfirmPassword from './forms/confirmPassword'
 import DeleteConfirmationDialog from './deleteConfirmationDialog'
 
 function DeleteUser() {
-  const {user} = useAuth()
+  const {user, setUser} = useAuth()
   const [wantToDelete, setWantToDelete] = useState(false)
   const [userConfirmed, setUserConfirmed] = useState(false)
   const [showDialog, setShowDialog] = useState<boolean>(false)
@@ -49,6 +49,7 @@ function DeleteUser() {
           notify('👋🏻', `Welcome Bye!`, {
             color: 'var(--lightGray)',
           })
+          setUser(null)
           setResponse({error: undefined, isSuccessful: true})
         },
         err => {
@@ -64,7 +65,7 @@ function DeleteUser() {
           color: 'var(--red)',
         })
       })
-  }, [user])
+  }, [setUser, user])
 
   useEffect(() => {
     if (userConfirmed) {
