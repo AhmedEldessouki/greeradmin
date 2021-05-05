@@ -17,7 +17,6 @@ import MultipleImageDialog from '../imageInForm'
 
 import type {GenreTypeGroup, ImportedImages} from '../../lib/apiTypes'
 import type {MyResponseType} from '../../../types/api'
-import Genre from './genre'
 
 // We Need this work around to avoid reTyping... {Important}!!
 type CleaningType = {
@@ -146,9 +145,6 @@ export default function SubmitData() {
     isSuccessful: false,
     error: undefined,
   })
-  const [selectedGenresST, setSelectedGenres] = useState<
-    Array<{name: string; id: string}>
-  >([])
   const [isPending, setPending] = useState(false)
 
   const fetchAllTitles = async (category: string) => {
@@ -188,9 +184,6 @@ export default function SubmitData() {
         error: {message: 'Title Already Exists.'} as Error,
       })
     }
-    if (selectedGenresST.length === 0) {
-      return setResponse({error: {message: `Please, select a Genre!`} as Error})
-    }
     if (acceptedImagesST.length === 0 && categoryST !== 'reels') {
       return setResponse({
         error: {message: `Please, select an image!`} as Error,
@@ -225,7 +218,6 @@ export default function SubmitData() {
 
     const cloudinaryRes = await handleImageCalls({
       acceptedImagesST,
-      genresArray: selectedGenresST,
       category: category.value,
       titleCamelCase,
       context: {
@@ -250,14 +242,12 @@ export default function SubmitData() {
       [key: string]: string | GenreTypeGroup | CleaningType
     } = {
       ...formDataCleaned,
-      genre: selectedGenresST,
       pictures: cloudinaryDataCleaned,
     }
     const data: {
       [key: string]: string | GenreTypeGroup | CleaningType
     } = {
       ...formDataCleaned,
-      genre: selectedGenresST,
     }
 
     console.log(titleDashed, data)
@@ -347,16 +337,6 @@ export default function SubmitData() {
               required
             />
           </label>
-          <Genre
-            selectedGenres={selectedGenresST}
-            onChange={selectedGenres => {
-              setSelectedGenres(
-                selectedGenres?.length > 1
-                  ? [...selectedGenres]
-                  : selectedGenres,
-              )
-            }}
-          />
           {categoryST !== 'reels' && (
             <Dropzone
               onAcceptedImages={newImages =>
