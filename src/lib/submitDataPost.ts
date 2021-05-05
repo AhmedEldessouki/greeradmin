@@ -3,7 +3,6 @@
 
 import type {MyResponseType, MyResponseTypeWithData} from '../../types/api'
 import type {
-  GenreTypeGroup,
   ImageResponseType,
   ImagesResponseType,
   ImportedImages,
@@ -18,7 +17,6 @@ const uploadImage = async (
     present,
     folderName,
     fileName,
-    genres,
     context,
     onProg,
   }: {
@@ -26,7 +24,6 @@ const uploadImage = async (
     folderName: string
     fileName: string
     context: {alt: string; caption: string}
-    genres: Array<string>
     onProg: (arg: number) => void
   },
 ) => {
@@ -101,7 +98,7 @@ const uploadImage = async (
     fd.append('folder', present)
     fd.append('public_id', `${folderName}/${fileName}`)
     fd.append('upload_preset', present)
-    fd.append('tags', genres.join(','))
+    fd.append('tags', `${folderName},${fileName}`)
     fd.append('file', file)
     fd.append('context', `alt=${context.alt}❘caption=${context.caption}`)
     // I have no idea what this "❘" is but its the key!!!
@@ -127,13 +124,11 @@ const gradualUpload = async (
   {
     present,
     folderName,
-    genres,
     context: {alt = 'This Is an Alt', caption = 'This is an description'},
     onProg,
   }: {
     present: string
     folderName: string
-    genres: Array<string>
     context: {alt: string; caption: string}
     onProg: (arg: number) => void
   },
@@ -151,7 +146,6 @@ const gradualUpload = async (
           present,
           folderName,
           fileName: `${folderName}${i}`,
-          genres,
           context: {
             alt,
             caption,
@@ -190,14 +184,12 @@ const gradualUpload = async (
 const handleImageCalls = async ({
   category,
   acceptedImagesST,
-  genresArray,
   titleCamelCase,
   context = {alt: 'This Is an Alt', caption: 'This is an description'},
   onProg,
 }: {
   category: string
   acceptedImagesST: ImportedImages
-  genresArray: GenreTypeGroup
   titleCamelCase: string
   context: {
     alt: string
@@ -217,7 +209,6 @@ const handleImageCalls = async ({
     //     present: 'audioBooks',
     //     onProg,
     //     folderName: titleCamelCase,
-    //     genres: genresArray.map(item => item.name),
     //    context: {
     //   alt = 'This Is an Alt',
     //   caption = 'This is an description',
@@ -231,7 +222,6 @@ const handleImageCalls = async ({
         present: 'liveEvents',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -242,7 +232,6 @@ const handleImageCalls = async ({
         present: 'voiceOver',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -253,7 +242,6 @@ const handleImageCalls = async ({
         present: 'audioBooks',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -264,7 +252,6 @@ const handleImageCalls = async ({
         present: 'actorFilms',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -275,7 +262,6 @@ const handleImageCalls = async ({
         present: 'actorTv',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -286,7 +272,6 @@ const handleImageCalls = async ({
         present: 'mediaPrint',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -297,7 +282,6 @@ const handleImageCalls = async ({
         present: 'mediaWeb',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
@@ -308,7 +292,6 @@ const handleImageCalls = async ({
         present: 'commercials',
         onProg,
         folderName: titleCamelCase,
-        genres: genresArray.map(item => item.name),
         context,
       })
       response = {...res}
