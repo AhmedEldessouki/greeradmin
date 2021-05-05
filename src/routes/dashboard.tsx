@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import {Link} from 'react-router-dom'
-import SignIn from '../components/forms/signIn'
-import SignUp from '../components/forms/signUp'
 import Layout from '../components/layout'
 import {useAuth} from '../context/auth'
 import User from '../components/user/user'
@@ -40,20 +38,18 @@ const $ButtonContainer = styled.div`
     }
   }
 `
+
 function Dashboard() {
   const {user, setUser} = useAuth()
+
   React.useEffect(() => {
     if (!auth.currentUser) return
-
     auth.onAuthStateChanged(currentUser => {
-      console.log('checking', currentUser)
       if (currentUser) {
-        console.log('passed', currentUser)
         return setUser(currentUser)
       }
       return setUser(null)
     })
-    console.log(user)
   }, [setUser, user])
 
   return (
@@ -61,18 +57,8 @@ function Dashboard() {
       <$Container>
         <h2>Welcome To Greer C. Morrison Dashboard</h2>
         <$ButtonContainer>
-          {user ? (
-            <>
-              <User />
-              <Link to="/control-unit">Control Unit</Link>
-            </>
-          ) : (
-            <>
-              <SignIn />
-              {/* <Link to="/verifySignUp">sign Up</Link> */}
-              <SignUp />
-            </>
-          )}
+          <User />
+          <Link to="/control-unit">Control Unit</Link>
         </$ButtonContainer>
       </$Container>
     </Layout>
