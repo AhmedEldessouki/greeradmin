@@ -24,15 +24,13 @@ const db = firebase.firestore()
 const auth = firebase.auth()
 
 // For stopping Next.js from showing "useEmulator is already in use" Error
-// if (typeof window !== 'undefined') {
-//   const isEmulatorActive = window.localStorage.getItem('isEmulatorActive')
+const isEmulatorActive = window.localStorage.getItem('isEmulatorActive')
 
-//   if (process.env.NODE_ENV !== 'production' && isEmulatorActive === 'true') {
-//     db.useEmulator('localhost', 8080)
-//     auth.useEmulator('http://localhost:9099')
-//     window.localStorage.setItem('isEmulatorActive', 'true')
-//   }
-// }
+if (process.env.NODE_ENV !== 'production' && isEmulatorActive === 'true') {
+  db.useEmulator('localhost', 8080)
+  auth.useEmulator('http://localhost:9099')
+  window.localStorage.setItem('isEmulatorActive', 'true')
+}
 
 export default firebase
 export {db, auth}

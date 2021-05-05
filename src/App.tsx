@@ -14,6 +14,7 @@ import {globalStyles} from './shared/styles'
 import {useAuth} from './context/auth'
 import SignIn from './components/forms/signIn'
 import SignUp from './components/forms/signUp'
+import {auth} from './lib/firebase'
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -30,7 +31,17 @@ const $AppContainer = styled.div`
 `
 
 function App() {
-  const {user} = useAuth()
+  const {user, setUser} = useAuth()
+
+  React.useEffect(() => {
+    auth.onAuthStateChanged(currentUser => {
+      if (currentUser) {
+        return setUser(currentUser)
+      }
+      return setUser(null)
+    })
+  }, [setUser])
+
   return (
     <div className="App">
       {globalStyles}

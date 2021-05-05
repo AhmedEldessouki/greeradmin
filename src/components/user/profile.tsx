@@ -8,6 +8,7 @@ import {postOneLevelDeep} from '../../lib/post'
 import {useAuth} from '../../context/auth'
 import {$Warning} from '../../shared/utils'
 import {useAsync} from '../../lib/useAsync'
+import {auth} from '../../lib/firebase'
 import {getOneLevelDeepDoc} from '../../lib/get'
 import {notify} from '../../lib/notify'
 import DeleteUser from '../deleteUser'
@@ -25,7 +26,7 @@ function Profile({
   showDialog: boolean
   closeDialog: () => void
 }) {
-  const {user} = useAuth()
+  const {user, setUser: setUserAuth} = useAuth()
   const {status: statusST, dispatch} = useAsync()
 
   const [nameST, setName] = useState<string>('')
@@ -46,24 +47,34 @@ function Profile({
     userId: '',
   })
 
+  React.useEffect(() => {
+    auth.onAuthStateChanged(currentUser => {
+      if (currentUser) {
+        return setUserAuth(currentUser)
+      }
+      return setUserAuth(null)
+    })
+  }, [setUserAuth])
+
   const fetchUser = useCallback(async () => {
     dispatch({type: 'pending'})
+    if (typeof user === 'undefined' || user === null) return
+    const {uid} = user
     const {data, error} = await getOneLevelDeepDoc<UserDataType>({
       collection: 'users',
-      doc: user?.uid,
+      doc: uid,
     })
-
     if (data) {
       setUser({...data})
       setName(data.name ?? '')
-      setEmail(data.email ?? user?.email)
+      setEmail(() => data.email ?? user.email)
       setPhoneNumber(data.phoneNumber ? data.phoneNumber : '')
       dispatch({type: 'resolved'})
     } else if (error) {
       dispatch({type: 'rejected'})
       setResponse({error: error})
     }
-  }, [dispatch, user?.email, user?.uid])
+  }, [dispatch, user])
 
   useEffect(() => {
     if (status === 'pending') return

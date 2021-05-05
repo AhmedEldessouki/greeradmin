@@ -40,17 +40,16 @@ const $ButtonContainer = styled.div`
 `
 
 function Dashboard() {
-  const {user, setUser} = useAuth()
+  const {setUser} = useAuth()
 
   React.useEffect(() => {
-    if (!auth.currentUser) return
     auth.onAuthStateChanged(currentUser => {
       if (currentUser) {
         return setUser(currentUser)
       }
       return setUser(null)
     })
-  }, [setUser, user])
+  }, [setUser])
 
   return (
     <Layout>

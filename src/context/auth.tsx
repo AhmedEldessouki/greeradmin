@@ -80,7 +80,7 @@ function useAuth() {
       }
       return setUser(null)
     })
-  }, [setUser, user])
+  }, [setUser])
 
   async function signOut() {
     notify('👋🏻', `Good Bye, ${user?.displayName && user.displayName}!`, {
