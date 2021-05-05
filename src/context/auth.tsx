@@ -1,7 +1,8 @@
-import {createContext, useContext, useEffect, useState} from 'react'
+import React from 'react'
 import firebase, {auth} from '../lib/firebase'
 import {notify} from '../lib/notify'
 import type {MyResponseTypeWithData} from '../../types/api'
+import {useLocalStorageState} from '../lib/useLocalStorage'
 
 type Credentials = {
   email: string
@@ -15,15 +16,14 @@ type AuthContextType = {
   >
 }
 
-const AuthContext = createContext<AuthContextType>({
-  user: undefined,
-  setUser: () => {},
-})
+const AuthContext = React.createContext<unknown>({})
 
 AuthContext.displayName = 'AuthContext'
 
 function AuthProvider({children}: {children: React.ReactNode}) {
-  const [user, setUser] = useState<firebase.User | null | undefined>(null)
+  const [user, setUser] = useLocalStorageState<
+    firebase.User | null | undefined
+  >('______________User_______________', null)
 
   const value = {
     user,
@@ -65,19 +65,13 @@ async function signIn(credentials: Credentials) {
   return response
 }
 function useAuth() {
-  const {user, setUser} = useContext(AuthContext)
+  const value = React.useContext(AuthContext)
+  const {user, setUser} = value as AuthContextType
 
-  if (
-    // eslint-disable-next-line no-constant-condition
-    !{
-      user,
-      setUser,
-    }
-  ) {
+  if (!setUser) {
     throw new Error('"useAuth" should be used inside "AuthProvider"')
   }
-
-  useEffect(() => {
+  React.useEffect(() => {
     if (!auth.currentUser) return
 
     auth.onAuthStateChanged(currentUser => {
