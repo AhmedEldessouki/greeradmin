@@ -9,13 +9,12 @@ const $NavItemsContainer = styled.div`
   gap: 50px;
   z-index: 200;
   position: relative;
+  align-items: center;
 
   ${mqMax.phoneLarge} {
     max-height: 100vh;
-    align-items: flex-start !important;
     gap: 10px;
     justify-content: space-around;
-    padding: 0 20px;
     align-items: center;
   }
   ${mqMax.s} {
@@ -23,23 +22,13 @@ const $NavItemsContainer = styled.div`
   }
 `
 
-function NavItems({
-  signOut,
-  user,
-}: {
-  signOut: () => Promise<void> | null
-  user: boolean
-}) {
+function NavItems({signOut}: {signOut: () => Promise<void> | null}) {
   return (
     <>
       <$NavItemsContainer>
         <Item href="/" title="Home" />
-        {user && (
-          <>
-            <Item href="/control-unit" title="Control Unit" />
-            <Item onClick={signOut} title="SignOut" />
-          </>
-        )}
+        <Item href="/control-unit" title="Control Unit" />
+        <Item onClick={signOut} title="SignOut" />
       </$NavItemsContainer>
     </>
   )

@@ -21,11 +21,6 @@ const $Nav = styled.nav`
   background: var(--black);
   color: var(--lightGray);
   height: var(--navHeight);
-  // __________ WHY ARE THOSE HERE!!! __________
-  // position: absolute;
-  // z-index: 1000;
-  // right: 0;
-  // left: 0;
   ${mqMax.phoneLarge} {
     flex-direction: row;
     justify-content: space-between;

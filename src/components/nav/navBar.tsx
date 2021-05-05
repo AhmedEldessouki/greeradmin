@@ -3,9 +3,9 @@ import {useAuth} from '../../context/auth'
 import NavItems from './navItems'
 
 function NavBar() {
-  const {user, signOut} = useAuth()
+  const {signOut} = useAuth()
 
-  return <NavItems signOut={signOut} user={!!user} />
+  return <NavItems signOut={signOut} />
 }
 
 export default NavBar
