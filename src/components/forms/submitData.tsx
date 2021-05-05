@@ -15,7 +15,7 @@ import Dropzone from '../dropzone'
 import Progress from '../progress'
 import MultipleImageDialog from '../imageInForm'
 
-import type {GenreTypeGroup, ImportedImages} from '../../lib/apiTypes'
+import type {ImportedImages} from '../../lib/apiTypes'
 import type {MyResponseType} from '../../../types/api'
 
 // We Need this work around to avoid reTyping... {Important}!!
@@ -239,13 +239,13 @@ export default function SubmitData() {
       (cloudinaryRes.data as unknown) as CleaningType,
     )
     const dataWithPictures: {
-      [key: string]: string | GenreTypeGroup | CleaningType
+      [key: string]: string | CleaningType
     } = {
       ...formDataCleaned,
       pictures: cloudinaryDataCleaned,
     }
     const data: {
-      [key: string]: string | GenreTypeGroup | CleaningType
+      [key: string]: string | CleaningType
     } = {
       ...formDataCleaned,
     }

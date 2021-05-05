@@ -3,7 +3,6 @@
 
 import type {MyResponseType, MyResponseTypeWithData} from '../../types/api'
 import type {
-  GenreTypeGroup,
   ImageResponseType,
   ImagesResponseType,
   ImportedImages,
