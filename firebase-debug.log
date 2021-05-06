@@ -1,0 +1,1299 @@
+[debug] [2021-05-06T09:43:21.199Z] ----------------------------------------------------------------------
+[debug] [2021-05-06T09:43:21.202Z] Command:       /root/.nvm/versions/node/v14.15.5/bin/node /usr/local/bin/firebase emulators:start --import=./dev-data --export-on-exit
+[debug] [2021-05-06T09:43:21.203Z] CLI Version:   9.4.0
+[debug] [2021-05-06T09:43:21.203Z] Platform:      linux
+[debug] [2021-05-06T09:43:21.203Z] Node Version:  v14.15.5
+[debug] [2021-05-06T09:43:21.210Z] Time:          Thu May 06 2021 12:43:21 GMT+0300 (GMT+03:00)
+[debug] [2021-05-06T09:43:21.211Z] ----------------------------------------------------------------------
+[debug] [2021-05-06T09:43:21.211Z] 
+[debug] [2021-05-06T09:43:21.214Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2021-05-06T09:43:21.253Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-05-06T09:43:21.254Z] > authorizing via signed-in user
+[info] i  emulators: Starting emulators: auth, firestore {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, firestore"}}
+[debug] [2021-05-06T09:43:21.321Z] [hub] writing locator at /tmp/hub-greer-c-m.json
+[info] i  firestore: Importing data from /root/greeradmin/dev-data/firestore_export/firestore_export.overall_export_metadata {"metadata":{"emulator":{"name":"firestore"},"message":"Importing data from /root/greeradmin/dev-data/firestore_export/firestore_export.overall_export_metadata"}}
+[debug] [2021-05-06T09:43:21.391Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-05-06T09:43:21.392Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-05-06T09:43:21.392Z] Starting Firestore Emulator with command {"binary":"java","args":["-Djava.net.preferIPv4Stack=true","-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/root/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.12.jar","--host","127.0.0.1","--port",8080,"--seed_from_export","/root/greeradmin/dev-data/firestore_export/firestore_export.overall_export_metadata","--rules","/root/greeradmin/firestore.rules"],"optionalArgs":["port","webchannel_port","host","rules","functions_emulator","seed_from_export"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Djava.net.preferIPv4Stack=true\",\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/root/.cache/firebase/emulators/cloud-firestore-emulator-v1.11.12.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--seed_from_export\",\"/root/greeradmin/dev-data/firestore_export/firestore_export.overall_export_metadata\",\"--rules\",\"/root/greeradmin/firestore.rules\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"functions_emulator\",\"seed_from_export\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2021-05-06T09:43:22.069Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2021-05-06T09:43:22.070Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2021-05-06T09:43:25.340Z] API endpoint: http://127.0.0.1: {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://127.0.0.1:"}}
+[debug] [2021-05-06T09:43:25.340Z] 8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] i  auth: Importing config from /root/greeradmin/dev-data/auth_export/config.json {"metadata":{"emulator":{"name":"database"},"message":"Importing config from /root/greeradmin/dev-data/auth_export/config.json"}}
+[info] i  auth: Importing accounts from /root/greeradmin/dev-data/auth_export/accounts.json {"metadata":{"emulator":{"name":"database"},"message":"Importing accounts from /root/greeradmin/dev-data/auth_export/accounts.json"}}
+[debug] [2021-05-06T09:43:31.093Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-05-06T09:43:31.093Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-05-06T09:43:31.094Z] Starting Emulator UI with command {"binary":"node","args":["/root/.cache/firebase/emulators/ui-v1.4.1/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/root/.cache/firebase/emulators/ui-v1.4.1/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-05-06T09:43:31.247Z] Web / API server started at http://127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at http://127.0.0.1:4000\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2021-05-06T09:44:36.251Z] May 06, 2021 12:44:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:36.457Z] May 06, 2021 12:44:36 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:36 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:44:37.695Z] May 06, 2021 12:44:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:37.763Z] May 06, 2021 12:44:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:50.405Z] May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:50.421Z] May 06, 2021 12:44:50 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:50 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:44:50.602Z] May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:50.691Z] May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:51.089Z] May 06, 2021 12:44:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:44:51.195Z] May 06, 2021 12:44:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:44:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:06.000Z] May 06, 2021 12:45:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:06.190Z] May 06, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:18.600Z] May 06, 2021 12:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:18.676Z] May 06, 2021 12:45:18 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+Null value error. for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+Null value error. for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+Caused by: com.google.firebase.rules.runtime.common.EvaluationException: Error: /root/greeradmin/firestore.rules line [14], column [22]. Null value error.
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:292)
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:277)
+	at com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:192)
+	at com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:179)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:124)
+	at com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:30)
+	at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1219)
+	at com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:727)
+	at com.google.common.util.concurrent.FluentFuture$TrustedFuture.addListener(FluentFuture.java:117)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.create(AbstractCatchingFuture.java:51)
+	at com.google.common.util.concurrent.Futures.catchingAsync(Futures.java:401)
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator.evaluate(DefaultEvaluator.java:193)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:91)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:81)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.evaluate(SinglePhaseRulesAuthorizer.java:475)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.access$200(SinglePhaseRulesAuthorizer.java:80)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer$CommitAuthorizerImpl.checkAccess(SinglePhaseRulesAuthorizer.java:702)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.lambda$checkCommit$0(EmulatorRulesAuthorizer.java:125)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:260)
+	... 21 more
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:18 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nNull value error. for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nNull value error. for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\nCaused by: com.google.firebase.rules.runtime.common.EvaluationException: Error: /root/greeradmin/firestore.rules line [14], column [22]. Null value error.\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:292)\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:277)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:192)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:179)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:124)\n\tat com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:30)\n\tat com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1219)\n\tat com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:727)\n\tat com.google.common.util.concurrent.FluentFuture$TrustedFuture.addListener(FluentFuture.java:117)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture.create(AbstractCatchingFuture.java:51)\n\tat com.google.common.util.concurrent.Futures.catchingAsync(Futures.java:401)\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator.evaluate(DefaultEvaluator.java:193)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:91)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:81)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.evaluate(SinglePhaseRulesAuthorizer.java:475)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.access$200(SinglePhaseRulesAuthorizer.java:80)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer$CommitAuthorizerImpl.checkAccess(SinglePhaseRulesAuthorizer.java:702)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.lambda$checkCommit$0(EmulatorRulesAuthorizer.java:125)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:260)\n\t... 21 more\n\n"}}
+[debug] [2021-05-06T09:45:18.772Z] May 06, 2021 12:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:18.789Z] May 06, 2021 12:45:18 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:18 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:45:36.223Z] May 06, 2021 12:45:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-05-06T09:45:48.642Z] >>> HTTP REQUEST PUT http://127.0.0.1:8080/emulator/v1/projects/greer-c-m:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /other/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /works/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /reels/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /users/{document=**} {\n      allow read, write;\n    }\n  }\n}"}]}}
+[debug] [2021-05-06T09:45:48.658Z] May 06, 2021 12:45:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:48.805Z] May 06, 2021 12:45:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:48.966Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-05-06T09:45:50.979Z] >>> HTTP REQUEST PUT http://127.0.0.1:8080/emulator/v1/projects/greer-c-m:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /other/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /works/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /reels/{document=**} {\n     allow read;\n     allow write: if request.auth !=null;\n    }\n    match /users/{document=**} {\n      allow read, write;\n    }\n  }\n}"}]}}
+[debug] [2021-05-06T09:45:50.983Z] May 06, 2021 12:45:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:50 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:51.027Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[debug] [2021-05-06T09:45:56.075Z] May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:56.080Z] May 06, 2021 12:45:56 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:45:56.108Z] May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:56.135Z] May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:56.150Z] May 06, 2021 12:45:56 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T09:45:56.192Z] May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:45:56.205Z] May 06, 2021 12:45:56 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:45:56 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:46:06.196Z] May 06, 2021 12:46:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:46:06 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:46:06.209Z] May 06, 2021 12:46:06 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:46:06 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:47:57.022Z] May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:47:57.030Z] May 06, 2021 12:47:57 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:47:57.061Z] May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:47:57.088Z] May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:47:57.101Z] May 06, 2021 12:47:57 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T09:47:57.144Z] May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:47:57.152Z] May 06, 2021 12:47:57 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:47:57 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:48:03.488Z] May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:03.496Z] May 06, 2021 12:48:03 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:03 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:48:03.547Z] May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:03.579Z] May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:19.677Z] May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:19.684Z] May 06, 2021 12:48:19 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:48:19.712Z] May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:19.746Z] May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:19.761Z] May 06, 2021 12:48:19 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T09:48:19.814Z] May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:48:19.826Z] May 06, 2021 12:48:19 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:19 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:48:48.680Z] May 06, 2021 12:48:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:48:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:49:03.629Z] May 06, 2021 12:49:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:49:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:49:03.638Z] May 06, 2021 12:49:03 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:49:03 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:50:12.535Z] May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:12.540Z] May 06, 2021 12:50:12 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:12 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:50:12.573Z] May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:12.607Z] May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:23.715Z] May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:23.720Z] May 06, 2021 12:50:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:50:23.787Z] May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:23.855Z] May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:23.877Z] May 06, 2021 12:50:23 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L10
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L10
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L10\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L10\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T09:50:23.919Z] May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:50:23.929Z] May 06, 2021 12:50:23 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:50:23 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:51:13.205Z] May 06, 2021 12:51:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:51:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:51:13.216Z] May 06, 2021 12:51:13 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:51:13 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T09:59:22.052Z] May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:59:22.057Z] May 06, 2021 12:59:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJlbWFpbCI6Im5lbW9haG1lZEBob3RtYWlsLmNvLnVrIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJhdXRoX3RpbWUiOjE2MjAyOTQyNzUsInVzZXJfaWQiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIiwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJuZW1vYWhtZWRAaG90bWFpbC5jby51ayJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn0sImlhdCI6MTYyMDI5NDI3NSwiZXhwIjoxNjIwMjk3ODc1LCJhdWQiOiJncmVlci1jLW0iLCJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vZ3JlZXItYy1tIiwic3ViIjoiWE05VDVvVnR6ZjBZRENCYlFOUFdsYkJUYk5rZyJ9.\r\n\n"}}
+[debug] [2021-05-06T09:59:22.172Z] May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:59:22.201Z] May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:59:22.217Z] May 06, 2021 12:59:22 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L10
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L10
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L10\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L10\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T09:59:22.257Z] May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T09:59:22.267Z] May 06, 2021 12:59:22 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 12:59:22 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[warn] ⚠  Received a signed JWT. Auth Emulator does not validate JWTs and IS NOT SECURE {"metadata":{"emulator":{"name":"auth"},"message":"Received a signed JWT. Auth Emulator does not validate JWTs and IS NOT SECURE"}}
+[debug] [2021-05-06T10:55:42.092Z] May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T10:55:42.101Z] May 06, 2021 1:55:42 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDI5ODUzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMjk4NTMzLCJleHAiOjE2MjAzMDIxMzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:55:42 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDI5ODUzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMjk4NTMzLCJleHAiOjE2MjAzMDIxMzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T10:55:42.138Z] May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T10:55:42.233Z] May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:55:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T10:56:42.233Z] May 06, 2021 1:56:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:56:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T10:56:42.241Z] May 06, 2021 1:56:42 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 1:56:42 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:41:54.085Z] May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:41:54.090Z] May 06, 2021 3:41:54 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:41:54 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:41:54.210Z] May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:41:54.330Z] May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:41:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:31.115Z] May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:31.119Z] May 06, 2021 3:42:31 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:42:31.216Z] May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:31.362Z] May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:31.376Z] May 06, 2021 3:42:31 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T12:42:31.422Z] May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:31.430Z] May 06, 2021 3:42:31 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:31 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:42:54.456Z] May 06, 2021 3:42:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:42:54.465Z] May 06, 2021 3:42:54 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:42:54 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:43:18.991Z] May 06, 2021 3:43:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:19.016Z] May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:19.199Z] May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:19.250Z] May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:19.684Z] May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:36.040Z] May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:36.071Z] May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:36.098Z] May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:36.194Z] May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:36.443Z] May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:45.121Z] May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:45.715Z] May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:43:45.890Z] May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:43:45 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:04.446Z] May 06, 2021 3:44:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:04.453Z] May 06, 2021 3:44:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:04 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:15.934Z] May 06, 2021 3:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:19.345Z] May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:19.496Z] May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:19.685Z] May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:26.957Z] May 06, 2021 3:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:26.961Z] May 06, 2021 3:44:26 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:26 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:44:27.054Z] May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:27.118Z] May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:27.127Z] May 06, 2021 3:44:27 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+false for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+false for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:27 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nfalse for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nfalse for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\n\n"}}
+[debug] [2021-05-06T12:44:27.209Z] May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:27 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:44:27.218Z] May 06, 2021 3:44:27 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:44:27 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:45:05.477Z] May 06, 2021 3:45:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-05-06T12:45:08.783Z] >>> HTTP REQUEST PUT http://127.0.0.1:8080/emulator/v1/projects/greer-c-m:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /other/{document=**} {\n     allow read;\n     allow write: if request.auth.uid !=null;\n    }\n    match /works/{document=**} {\n     allow read;\n     allow write: if request.auth.uid !=null;\n    }\n    match /reels/{document=**} {\n     allow read;\n     allow write: if request.auth.uid !=null;\n    }\n    match /users/{document=**} {\n      allow read, write;\n    }\n  }\n}"}]}}
+[debug] [2021-05-06T12:45:08.789Z] May 06, 2021 3:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:08.825Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[debug] [2021-05-06T12:45:18.333Z] May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:18.337Z] May 06, 2021 3:45:18 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwMTgzMywidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzAxODMzLCJleHAiOjE2MjAzMDU0MzMsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:45:18.461Z] May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:18.584Z] May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:18.598Z] May 06, 2021 3:45:18 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError
+INFO: operation failed: 
+Null value error. for 'create' @ L14
+com.google.cloud.datastore.core.exception.DatastoreException: 
+Null value error. for 'create' @ L14
+	at com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)
+	at com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)
+	at com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)
+	at com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)
+	at com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)
+	at com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)
+	at com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)
+	at com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)
+	at com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)
+Caused by: com.google.firebase.rules.runtime.common.EvaluationException: Error: security.rules line [14], column [22]. Null value error.
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:292)
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:277)
+	at com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:192)
+	at com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:179)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:124)
+	at com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:30)
+	at com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1219)
+	at com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:727)
+	at com.google.common.util.concurrent.FluentFuture$TrustedFuture.addListener(FluentFuture.java:117)
+	at com.google.common.util.concurrent.AbstractCatchingFuture.create(AbstractCatchingFuture.java:51)
+	at com.google.common.util.concurrent.Futures.catchingAsync(Futures.java:401)
+	at com.google.firebase.rules.runtime.impl.DefaultEvaluator.evaluate(DefaultEvaluator.java:193)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:91)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:81)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.evaluate(SinglePhaseRulesAuthorizer.java:475)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.access$200(SinglePhaseRulesAuthorizer.java:80)
+	at com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer$CommitAuthorizerImpl.checkAccess(SinglePhaseRulesAuthorizer.java:702)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.lambda$checkCommit$0(EmulatorRulesAuthorizer.java:125)
+	at com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:260)
+	... 21 more
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM com.google.cloud.datastore.emulator.impl.util.WrappedStreamObserver onError\nINFO: operation failed: \nNull value error. for 'create' @ L14\ncom.google.cloud.datastore.core.exception.DatastoreException: \nNull value error. for 'create' @ L14\n\tat com.google.cloud.datastore.core.exception.DatastoreException$Builder.build(DatastoreException.java:111)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.verboseError(EmulatorRulesAuthorizer.java:288)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:265)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.checkCommit(EmulatorRulesAuthorizer.java:117)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.commitHelper(CloudFirestoreV1.java:817)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:731)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.internalCommit(CloudFirestoreV1.java:715)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1.write(CloudFirestoreV1.java:704)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.handleRequest(CloudFirestoreV1WriteStream.java:208)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.write(CloudFirestoreV1WriteStream.java:136)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:92)\n\tat com.google.cloud.datastore.emulator.impl.CloudFirestoreV1WriteStream.onNext(CloudFirestoreV1WriteStream.java:25)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:141)\n\tat com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler.onMessage(FirestoreV1WebChannelAdapter.java:111)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.onMessage(ChannelInternalImpl.java:485)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.deliverMessage(ForwardChannel.java:114)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.processPendingRequest(ForwardChannel.java:93)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.consume(ForwardChannel.java:67)\n\tat com.google.net.webchannel.server.v8.ForwardChannel.add(ForwardChannel.java:60)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handleRequestParams(ChannelInternalImpl.java:260)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.processSessionRequest(ChannelInternalImpl.java:317)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.handle(ChannelInternalImpl.java:142)\n\tat com.google.net.webchannel.server.v8.ChannelInternalImpl.consume(ChannelInternalImpl.java:78)\n\tat com.google.net.webchannel.server.common.ChannelProcessor.run(ChannelProcessor.java:80)\nCaused by: com.google.firebase.rules.runtime.common.EvaluationException: Error: security.rules line [14], column [22]. Null value error.\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:292)\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator$TransformEvaluationException.apply(DefaultEvaluator.java:277)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:192)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture$AsyncCatchingFuture.doFallback(AbstractCatchingFuture.java:179)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture.run(AbstractCatchingFuture.java:124)\n\tat com.google.common.util.concurrent.DirectExecutor.execute(DirectExecutor.java:30)\n\tat com.google.common.util.concurrent.AbstractFuture.executeListener(AbstractFuture.java:1219)\n\tat com.google.common.util.concurrent.AbstractFuture.addListener(AbstractFuture.java:727)\n\tat com.google.common.util.concurrent.FluentFuture$TrustedFuture.addListener(FluentFuture.java:117)\n\tat com.google.common.util.concurrent.AbstractCatchingFuture.create(AbstractCatchingFuture.java:51)\n\tat com.google.common.util.concurrent.Futures.catchingAsync(Futures.java:401)\n\tat com.google.firebase.rules.runtime.impl.DefaultEvaluator.evaluate(DefaultEvaluator.java:193)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:91)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRuleClient$EmulatorRuleEvaluator.evaluate(EmulatorRuleClient.java:81)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.evaluate(SinglePhaseRulesAuthorizer.java:475)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer.access$200(SinglePhaseRulesAuthorizer.java:80)\n\tat com.google.cloud.datastore.core.auth.rules.SinglePhaseRulesAuthorizer$CommitAuthorizerImpl.checkAccess(SinglePhaseRulesAuthorizer.java:702)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.lambda$checkCommit$0(EmulatorRulesAuthorizer.java:125)\n\tat com.google.cloud.datastore.emulator.impl.rules.EmulatorRulesAuthorizer.withVerboseErrors(EmulatorRulesAuthorizer.java:260)\n\t... 21 more\n\n"}}
+[debug] [2021-05-06T12:45:18.698Z] May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:18.705Z] May 06, 2021 3:45:18 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:18 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:45:19.565Z] May 06, 2021 3:45:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:45:19.572Z] May 06, 2021 3:45:19 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:19 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T12:45:35.795Z] May 06, 2021 3:45:35 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:45:35 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:46:53.977Z] May 06, 2021 3:46:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:46:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:48:10.075Z] May 06, 2021 3:48:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:48:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:49:10.239Z] May 06, 2021 3:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:50:10.286Z] May 06, 2021 3:50:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:50:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:50:56.550Z] May 06, 2021 3:50:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:50:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:51:42.624Z] May 06, 2021 3:51:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:51:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:52:28.783Z] May 06, 2021 3:52:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:52:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:53:44.880Z] May 06, 2021 3:53:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:53:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:55:01.412Z] May 06, 2021 3:55:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:55:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:56:18.034Z] May 06, 2021 3:56:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:56:18 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:57:34.151Z] May 06, 2021 3:57:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:57:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[info] i  firestore: Change detected, updating rules... 
+[debug] [2021-05-06T12:58:15.192Z] >>> HTTP REQUEST PUT http://127.0.0.1:8080/emulator/v1/projects/greer-c-m:securityRules  
+ {"ignore_errors":true,"rules":{"files":[{"name":"security.rules","content":"rules_version = '2';\nservice cloud.firestore {\n  match /databases/{database}/documents {\n    match /other/{document=**} {\n     allow read,write;\n    }\n    match /works/{document=**} {\n     allow read,write;\n    }\n    match /reels/{document=**} {\n     allow read,write;\n    }\n    match /users/{document=**} {\n      allow read, write;\n    }\n  }\n}"}]}}
+[debug] [2021-05-06T12:58:15.195Z] May 06, 2021 3:58:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:58:15 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:58:15.219Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[info] ✔  firestore: Rules updated. 
+[debug] [2021-05-06T12:58:51.448Z] May 06, 2021 3:58:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:58:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[warn] ⚠  Received a signed JWT. Auth Emulator does not validate JWTs and IS NOT SECURE {"metadata":{"emulator":{"name":"auth"},"message":"Received a signed JWT. Auth Emulator does not validate JWTs and IS NOT SECURE"}}
+[debug] [2021-05-06T12:59:29.499Z] May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:29.504Z] May 06, 2021 3:59:29 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:29 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:59:29.606Z] May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:29.677Z] May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:41.250Z] May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:41.257Z] May 06, 2021 3:59:41 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:41 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T12:59:41.351Z] May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:41.504Z] May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T12:59:41.589Z] May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 3:59:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:00:29.683Z] May 06, 2021 4:00:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:00:29 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:00:29.692Z] May 06, 2021 4:00:29 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:00:29 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:00:41.619Z] May 06, 2021 4:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:00:41.785Z] May 06, 2021 4:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:00:41 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:00:41.790Z] May 06, 2021 4:00:41 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:00:41 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:01:57.731Z] May 06, 2021 4:01:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:01:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:02:37.535Z] May 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:02:37.535Z] May 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+May 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\nMay 06, 2021 4:02:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:02:57.842Z] May 06, 2021 4:02:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:02:57 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:04:13.947Z] May 06, 2021 4:04:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:04:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:05:13.987Z] May 06, 2021 4:05:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:05:13 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:06:30.093Z] May 06, 2021 4:06:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:06:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:07:16.139Z] May 06, 2021 4:07:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:07:16 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:07:53.670Z] May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:07:53.671Z] May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:07:53.673Z] May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:07:53 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:08:02.316Z] May 06, 2021 4:08:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:08:02 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:08:48.395Z] May 06, 2021 4:08:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:08:48 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:10:05.364Z] May 06, 2021 4:10:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:10:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:10:51.420Z] May 06, 2021 4:10:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:10:51 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:12:07.948Z] May 06, 2021 4:12:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:12:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:13:24.051Z] May 06, 2021 4:13:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:13:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:14:10.134Z] May 06, 2021 4:14:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:14:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:14:40.622Z] May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:14:40.627Z] May 06, 2021 4:14:40 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:14:40 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T13:14:40.725Z] May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:14:40.826Z] May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:14:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:15:11.310Z] May 06, 2021 4:15:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:15:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:15:26.213Z] May 06, 2021 4:15:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:15:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:15:26.400Z] May 06, 2021 4:15:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:15:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:16:11.522Z] May 06, 2021 4:16:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:16:11 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:16:12.350Z] May 06, 2021 4:16:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:16:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:16:26.462Z] May 06, 2021 4:16:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:16:26 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:16:26.469Z] May 06, 2021 4:16:26 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:16:26 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:17:30.194Z] May 06, 2021 4:17:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:17:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:18:30.223Z] May 06, 2021 4:18:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:18:30 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:19:46.333Z] May 06, 2021 4:19:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:19:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:20:32.441Z] May 06, 2021 4:20:32 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:20:32 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:21:49.543Z] May 06, 2021 4:21:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:21:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:22:49.596Z] May 06, 2021 4:22:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:22:49 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:24:05.702Z] May 06, 2021 4:24:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:24:05 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:25:21.802Z] May 06, 2021 4:25:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:25:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:26:21.844Z] May 06, 2021 4:26:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:26:21 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:27:38.143Z] May 06, 2021 4:27:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:27:38 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:28:07.154Z] May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:28:07.158Z] May 06, 2021 4:28:07 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:07 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T13:28:07.206Z] May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:28:07.279Z] May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:07 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:28:17.855Z] May 06, 2021 4:28:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:28:54.281Z] May 06, 2021 4:28:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:28:54 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:30:10.399Z] May 06, 2021 4:30:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:30:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:30:56.459Z] May 06, 2021 4:30:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:30:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:32:12.582Z] May 06, 2021 4:32:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:32:12 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:32:58.630Z] May 06, 2021 4:32:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:32:58 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:33:44.706Z] May 06, 2021 4:33:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:33:44 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:35:01.243Z] May 06, 2021 4:35:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:35:01 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:36:17.365Z] May 06, 2021 4:36:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:36:17 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:37:03.416Z] May 06, 2021 4:37:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:37:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:38:03.478Z] May 06, 2021 4:38:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:38:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:39:03.513Z] May 06, 2021 4:39:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:39:03 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:40:20.587Z] May 06, 2021 4:40:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:40:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:41:20.915Z] May 06, 2021 4:41:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:41:20 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:42:37.006Z] May 06, 2021 4:42:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:42:37 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:43:23.799Z] May 06, 2021 4:43:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:43:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:44:09.860Z] May 06, 2021 4:44:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:44:09 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:44:55.919Z] May 06, 2021 4:44:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:44:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:45:55.959Z] May 06, 2021 4:45:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:45:55 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:46:42.022Z] May 06, 2021 4:46:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:46:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.106Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.109Z] May 06, 2021 4:47:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T13:47:23.504Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.505Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.508Z] May 06, 2021 4:47:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T13:47:23.647Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.664Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:23.709Z] May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:36.441Z] May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:36.446Z] May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:36.448Z] May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:36.501Z] May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:36 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:39.439Z] May 06, 2021 4:47:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:47:39.543Z] May 06, 2021 4:47:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:47:39 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:48:08.787Z] May 06, 2021 4:48:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:08 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:48:23.788Z] May 06, 2021 4:48:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:23 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:48:23.799Z] May 06, 2021 4:48:23 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:23 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:48:24.010Z] May 06, 2021 4:48:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:24 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:48:24.035Z] May 06, 2021 4:48:24 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:24 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreWriteHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:48:40.449Z] May 06, 2021 4:48:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:48:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:10.090Z] May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:10.092Z] May 06, 2021 4:49:10 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders
+WARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2
+Content-Type:text/plain
+X-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e
+Authorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:10 PM com.google.net.webchannel.server.common.CorsFilter populateCustomHeaders\nWARNING: Invalid $httpHeaders: X-Goog-Api-Client:gl-js/ fire/8.4.2\r\nContent-Type:text/plain\r\nX-Firebase-GMPID:1:679086319915:web:8451a94a6bc589e290fd6e\r\nAuthorization:Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJuYW1lIjoibmVtbyIsImVtYWlsIjoibmVtb2FobWVkQGhvdG1haWwuY28udWsiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImF1dGhfdGltZSI6MTYyMDMwNTk1OCwidXNlcl9pZCI6IlhNOVQ1b1Z0emYwWURDQmJRTlBXbGJCVGJOa2ciLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm5lbW9haG1lZEBob3RtYWlsLmNvLnVrIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifSwiaWF0IjoxNjIwMzA1OTU4LCJleHAiOjE2MjAzMDk1NTgsImF1ZCI6ImdyZWVyLWMtbSIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9ncmVlci1jLW0iLCJzdWIiOiJYTTlUNW9WdHpmMFlEQ0JiUU5QV2xiQlRiTmtnIn0.\r\n\n"}}
+[debug] [2021-05-06T13:49:10.183Z] May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:10.258Z] May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:10 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:33.682Z] May 06, 2021 4:49:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:33 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:34.488Z] May 06, 2021 4:49:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:49:40.519Z] May 06, 2021 4:49:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:49:40 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:50:19.642Z] May 06, 2021 4:50:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:50:19 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:50:34.459Z] May 06, 2021 4:50:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:50:34 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:50:34.467Z] May 06, 2021 4:50:34 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose
+INFO: channel closed
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:50:34 PM com.google.cloud.datastore.emulator.firestore.webchannel.FirestoreV1WebChannelAdapter$FirestoreListenHandler onClose\nINFO: channel closed\n"}}
+[debug] [2021-05-06T13:50:56.676Z] May 06, 2021 4:50:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:50:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:51:56.707Z] May 06, 2021 4:51:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:51:56 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:52:42.763Z] May 06, 2021 4:52:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:52:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:53:42.829Z] May 06, 2021 4:53:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:53:42 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:54:28.871Z] May 06, 2021 4:54:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:54:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:55:28.903Z] May 06, 2021 4:55:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:55:28 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:56:14.970Z] May 06, 2021 4:56:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:56:14 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:57:31.081Z] May 06, 2021 4:57:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:57:31 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:57:46.069Z] Received signal SIGHUP 1
+[info]  
+[info] i  emulators: Received SIGHUP for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGHUP signal again to stop right now. 
+[info] i  Automatically exporting data using --export-on-exit "./dev-data" please wait for the export to finish... 
+[debug] [2021-05-06T13:57:46.073Z] >>> HTTP REQUEST GET http://127.0.0.1:4400/  
+ 
+[debug] [2021-05-06T13:57:46.075Z] Ignoring signal SIGHUP due to short delay of 6ms
+[debug] [2021-05-06T13:57:46.085Z] <<< HTTP RESPONSE 200 {"x-powered-by":"Express","content-type":"application/json; charset=utf-8","content-length":"50","etag":"W/\"32-ibC7LtnlPoax2AmOfBCZxe7dLbU\"","date":"Thu, 06 May 2021 13:57:46 GMT","connection":"keep-alive","keep-alive":"timeout=5"}
+[info] i  Found running emulator hub for project greer-c-m at http://127.0.0.1:4400 
+[info] i  Deleting directory /root/greeradmin/dev-data/firestore_export 
+[info] i  Exporting data to: /root/greeradmin/dev-data 
+[debug] [2021-05-06T13:57:46.109Z] >>> HTTP REQUEST POST http://127.0.0.1:4400/_admin/export  
+ {"path":"/root/greeradmin/dev-data"}
+[info] i  emulators: Received export request. Exporting data to /root/greeradmin/dev-data. 
+[debug] [2021-05-06T13:57:46.115Z] >>> HTTP REQUEST POST http://127.0.0.1:8080/emulator/v1/projects/greer-c-m:export  
+ {"database":"projects/greer-c-m/databases/(default)","export_directory":"/root/greeradmin/dev-data","export_name":"firestore_export"}
+[debug] [2021-05-06T13:57:46.128Z] May 06, 2021 4:57:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"May 06, 2021 4:57:46 PM io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2021-05-06T13:57:46.956Z] <<< HTTP RESPONSE 200 {"content-type":"application/json","content-length":"4"}
+[debug] [2021-05-06T13:57:46.957Z] Exporting auth users in Project greer-c-m to /root/greeradmin/dev-data/auth_export/accounts.json
+[debug] [2021-05-06T13:57:46.972Z] Exporting project config in Project greer-c-m to /root/greeradmin/dev-data/auth_export/accounts.json
+[info] ✔  emulators: Export complete. 
+[debug] [2021-05-06T13:57:46.980Z] Error: write EIO
+    at afterWriteDispatched (internal/stream_base_commons.js:156:25)
+    at writeGeneric (internal/stream_base_commons.js:147:3)
+    at WriteStream.Socket._writeGeneric (net.js:785:11)
+    at WriteStream.Socket._write (net.js:797:8)
+    at writeOrBuffer (internal/streams/writable.js:358:12)
+    at WriteStream.Writable.write (internal/streams/writable.js:303:10)
+    at Console.log (/usr/local/lib/node_modules/firebase-tools/node_modules/winston/lib/winston/transports/console.js:79:23)
+    at Console._write (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/index.js:103:17)
+    at doWrite (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:428:64)
+    at writeOrBuffer (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:417:5)
+    at Console.Writable.write (/usr/local/lib/node_modules/firebase-tools/node_modules/winston-transport/node_modules/readable-stream/lib/_stream_writable.js:334:11)
+    at DerivedLogger.ondata (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:681:20)
+    at DerivedLogger.emit (events.js:327:22)
+    at DerivedLogger.EventEmitter.emit (domain.js:467:12)
+    at addChunk (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:298:12)
+    at readableAddChunk (/usr/local/lib/node_modules/firebase-tools/node_modules/readable-stream/lib/_stream_readable.js:280:11)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-05-06T13:57:46.983Z] <<< HTTP RESPONSE 200 {"x-powered-by":"Express","content-type":"application/json; charset=utf-8","content-length":"16","etag":"W/\"10-MxB4y4MLcx6QDsp8b8vgp7iFMFo\"","date":"Thu, 06 May 2021 13:57:46 GMT","connection":"keep-alive","keep-alive":"timeout=5"}
+[info] ✔  Export complete 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[debug] [2021-05-06T13:57:46.988Z] node[1257]: ../src/node.cc:742:void node::ResetStdio(): Assertion `!(err != 0) || (err == -1 && (*__errno_location ()) == 1)' failed.
+ {"metadata":{"emulator":{"name":"ui"},"message":"node[1257]: ../src/node.cc:742:void node::ResetStdio(): Assertion `!(err != 0) || (err == -1 && (*__errno_location ()) == 1)' failed.\n"}}
+[debug] [2021-05-06T13:57:46.992Z]  1: 0xa04200 node::Abort() [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 1: 0xa04200 node::Abort() [node]\n"}}
+[debug] [2021-05-06T13:57:46.993Z]  2: 0xa0427e  [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 2: 0xa0427e  [node]\n"}}
+[debug] [2021-05-06T13:57:46.993Z]  3: 0x9ce054 node::ResetStdio() [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 3: 0x9ce054 node::ResetStdio() [node]\n"}}
+[debug] [2021-05-06T13:57:46.994Z]  4: 0x9ce110 node::SignalExit(int, siginfo_t*, void*) [node]
+ 5: 0x7f72e826a3c0  [/lib/x86_64-linux-gnu/libpthread.so.0]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 4: 0x9ce110 node::SignalExit(int, siginfo_t*, void*) [node]\n 5: 0x7f72e826a3c0  [/lib/x86_64-linux-gnu/libpthread.so.0]\n"}}
+[debug] [2021-05-06T13:57:46.994Z]  6: 0x7f72e81855ce epoll_wait [/lib/x86_64-linux-gnu/libc.so.6]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 6: 0x7f72e81855ce epoll_wait [/lib/x86_64-linux-gnu/libc.so.6]\n"}}
+[debug] [2021-05-06T13:57:46.995Z]  7: 0x138e9c4  [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 7: 0x138e9c4  [node]\n"}}
+[debug] [2021-05-06T13:57:46.996Z]  8: 0x137c468 uv_run [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 8: 0x137c468 uv_run [node]\n"}}
+[debug] [2021-05-06T13:57:46.997Z]  9: 0xa44974 node::NodeMainInstance::Run() [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":" 9: 0xa44974 node::NodeMainInstance::Run() [node]\n"}}
+[debug] [2021-05-06T13:57:46.998Z] 10: 0x9d1e15 node::Start(int, char**) [node]
+11: 0x7f72e808a0b3 __libc_start_main [/lib/x86_64-linux-gnu/libc.so.6]
+ {"metadata":{"emulator":{"name":"ui"},"message":"10: 0x9d1e15 node::Start(int, char**) [node]\n11: 0x7f72e808a0b3 __libc_start_main [/lib/x86_64-linux-gnu/libc.so.6]\n"}}
+[debug] [2021-05-06T13:57:46.998Z] 12: 0x9694cc  [node]
+ {"metadata":{"emulator":{"name":"ui"},"message":"12: 0x9694cc  [node]\n"}}
+[warn] ⚠  Emulator UI has exited upon receiving signal: SIGABRT 
+[info] i  firestore: Stopping Firestore Emulator {"metadata":{"emulator":{"name":"firestore"},"message":"Stopping Firestore Emulator"}}
+[debug] [2021-05-06T13:57:47.010Z] *** shutting down gRPC server since JVM is shutting down
+ {"metadata":{"emulator":{"name":"firestore"},"message":"*** shutting down gRPC server since JVM is shutting down\n"}}
+[debug] [2021-05-06T13:57:47.014Z] *** server shut down
+ {"metadata":{"emulator":{"name":"firestore"},"message":"*** server shut down\n"}}
