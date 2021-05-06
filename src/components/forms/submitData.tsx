@@ -1,8 +1,9 @@
 /* eslint-disable prefer-promise-reject-errors */
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import Button from '@material-ui/core/Button'
+import {TextareaAutosize} from '@material-ui/core'
 import {$Warning, mqMax} from '../../shared/utils'
 import {dashify} from '../../lib/dashify'
 import {spacefy} from '../../lib/spacefy'
@@ -17,6 +18,7 @@ import MultipleImageDialog from '../imageInForm'
 
 import type {ImportedImages} from '../../lib/apiTypes'
 import type {MyResponseType} from '../../../types/api'
+import {$Field} from './sharedCss/field'
 
 // We Need this work around to avoid reTyping... {Important}!!
 type CleaningType = {
@@ -59,6 +61,7 @@ const $SubmitDataContainer = styled.div`
 `
 
 const $CollectDataForm = styled.form`
+  width: 300px;
   ${flexCol}
   label {
     ${flexCol}
@@ -124,6 +127,23 @@ const $CollectDataForm = styled.form`
       background: var(--blackShade);
     }
   }
+  textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--black);
+    :focus-within,
+    :focus {
+      outline: none;
+      border-bottom-width: 3px;
+      border-color: var(--blackShade);
+    }
+    :valid {
+      color: var(--green);
+    }
+    :invalid {
+      color: var(--red);
+    }
+  }
 `
 const $BtnGroup = styled.div`
   display: flex;
@@ -165,13 +185,9 @@ export default function SubmitData() {
     if (data) {
       setTitlesCollection(data.map(obj => obj.title))
     }
+    console.log(titlesCollectionST)
     return void 0
   }
-
-  useEffect(() => {
-    if (categoryST === 'choose') return
-    fetchAllTitles(categoryST)
-  }, [categoryST])
 
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
@@ -293,7 +309,12 @@ export default function SubmitData() {
             <select
               name="category"
               defaultValue={categoryST}
-              onBlur={e => setCategory(e.currentTarget.value)}
+              onBlur={async e => {
+                setCategory(e.currentTarget.value)
+                if (e.currentTarget.value !== 'choose') {
+                  await fetchAllTitles(e.currentTarget.value)
+                }
+              }}
               onChange={e => setCategory(e.currentTarget.value)}
               id="category"
               required
@@ -326,9 +347,9 @@ export default function SubmitData() {
               </optgroup>
             </select>
           </label>
-          <label htmlFor="title">
-            Title
+          <$Field>
             <input
+              placeholder="this is to help control label"
               type="text"
               name="title"
               value={titleST}
@@ -336,7 +357,8 @@ export default function SubmitData() {
               id="title"
               required
             />
-          </label>
+            <label htmlFor="title">Title</label>
+          </$Field>
           {categoryST !== 'reels' && (
             <Dropzone
               onAcceptedImages={newImages =>
@@ -345,29 +367,30 @@ export default function SubmitData() {
               onRejectedImages={newImages => setRejectedImages([...newImages])}
             />
           )}
-          <label htmlFor="url">
-            Image/Video Url
+          <$Field>
             <input
+              placeholder="this is to help control label"
               type="url"
               name="url"
               value={urlST}
               onChange={e => setUrl(e.target.value)}
               id="url"
             />
-          </label>
-          <label htmlFor="description">
+            <label htmlFor="url">Image/Video Url</label>
+          </$Field>
+          <label style={{marginTop: '1.2rem '}} htmlFor="description">
             Description
-            <textarea
-              name="description"
-              value={descriptionST}
-              onChange={e => setDescription(e.target.value)}
-              id="description"
-              cols={30}
-              rows={10}
-            />
           </label>
+          <TextareaAutosize
+            name="description"
+            value={descriptionST}
+            onChange={e => setDescription(e.target.value)}
+            id="description"
+          />
           {responseST.error && (
-            <$Warning role="alert">{responseST.error.message}</$Warning>
+            <$Warning marginBottom="10" role="alert">
+              {responseST.error.message}
+            </$Warning>
           )}
           {progressST > 0 && <Progress progress={progressST} />}
           <$BtnGroup>
@@ -375,6 +398,7 @@ export default function SubmitData() {
               style={{
                 background: !isPending ? 'var(--green)' : 'var(--red)',
                 color: 'var(--lightGray)',
+                margin: '1.2rem 0',
               }}
               type="submit"
               variant="contained"
