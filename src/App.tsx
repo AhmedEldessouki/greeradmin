@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import {ToastContainer} from 'react-toastify'
 import styled from '@emotion/styled'
+import {Helmet} from 'react-helmet'
 import ControlUnit from './routes/control-unit'
 import Dashboard from './routes/dashboard'
 import Validation from './routes/validation'
@@ -44,6 +45,13 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <title>GREER C. MORRISON</title>
+      </Helmet>
       {globalStyles}
       {user ? (
         <Router>
