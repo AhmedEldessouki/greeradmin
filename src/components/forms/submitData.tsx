@@ -153,14 +153,39 @@ const $BtnGroup = styled.div`
   justify-content: space-evenly;
 `
 
+function UrlInput({
+  urlName,
+  handleBlur,
+}: {
+  urlName: string
+  handleBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+}) {
+  const [state, setState] = useState('')
+
+  return (
+    <$Field>
+      <input
+        placeholder="this is to help control label"
+        type="url"
+        name="url"
+        value={state}
+        onChange={e => setState(e.target.value)}
+        onBlur={handleBlur}
+        id="url"
+      />
+      <label htmlFor="url">{urlName} Url</label>
+    </$Field>
+  )
+}
+
 function NewUrl({
   urlName,
   urlArray,
-  onArrayChange,
+  setArrayChange,
 }: {
   urlName: string
   urlArray: string[]
-  onArrayChange: (arg: string[]) => void
+  setArrayChange: React.Dispatch<React.SetStateAction<Array<string>>>
 }) {
   return (
     <>
@@ -170,7 +195,7 @@ function NewUrl({
             aria-label="remove last image url"
             onClick={() => {
               urlArray.pop()
-              onArrayChange([...urlArray])
+              setArrayChange([...urlArray])
             }}
           >
             <RemoveIcon />
@@ -183,7 +208,7 @@ function NewUrl({
           </Button>
           <Button
             aria-label={`add a new ${urlName} url`}
-            onClick={() => onArrayChange([...urlArray.concat('')])}
+            onClick={() => setArrayChange([...urlArray.concat('')])}
           >
             <AddIcon />
           </Button>
@@ -192,20 +217,14 @@ function NewUrl({
       {urlArray.length > 0 &&
         urlArray.map((item, i) => {
           return (
-            <$Field key={nanoid()}>
-              <input
-                placeholder="this is to help control label"
-                type="url"
-                name="url"
-                value={item}
-                onChange={e => {
-                  urlArray[i] = e.target.value
-                  onArrayChange([...urlArray])
-                }}
-                id="url"
-              />
-              <label htmlFor="url">{urlName} Url</label>
-            </$Field>
+            <UrlInput
+              key={nanoid()}
+              handleBlur={e => {
+                urlArray[i] = e.target.value
+                setArrayChange([...urlArray])
+              }}
+              urlName={urlName}
+            />
           )
         })}
     </>
@@ -320,21 +339,25 @@ export default function SubmitData() {
       [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
-      imgUrls: imageUrlsST,
-      videoUrls: videoUrlsST,
       pictures: cloudinaryDataCleaned,
     }
     const data: {
       [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
-      imgUrls: imageUrlsST,
-      videoUrls: videoUrlsST,
     }
 
     const firestoreResponse = await handleDBCall({
       category: category.value,
-      data: category.value !== 'reels' ? dataWithPictures : data,
+      data: {
+        ...(category.value !== 'reels' ? dataWithPictures : data),
+        imgUrls: imageUrlsST.filter(function (item, index, inputArray) {
+          return inputArray.indexOf(item) == index && item !== ''
+        }),
+        videoUrls: videoUrlsST.filter(function (item, index, inputArray) {
+          return inputArray.indexOf(item) == index
+        }),
+      },
       titleDashed,
     })
 
@@ -435,12 +458,12 @@ export default function SubmitData() {
           <NewUrl
             urlName="Video"
             urlArray={videoUrlsST}
-            onArrayChange={arg => setVideoUrls([...arg])}
+            setArrayChange={setVideoUrls}
           />
           <NewUrl
             urlName="Image"
             urlArray={imageUrlsST}
-            onArrayChange={arg => setImageUrls([...arg])}
+            setArrayChange={setImageUrls}
           />
 
           <label style={{marginTop: '1.2rem '}} htmlFor="description">
