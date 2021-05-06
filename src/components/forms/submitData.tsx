@@ -1,8 +1,13 @@
 /* eslint-disable prefer-promise-reject-errors */
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import Button from '@material-ui/core/Button'
+import AddIcon from '@material-ui/icons/Add'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import TextareaAutosize from '@material-ui/core/TextareaAutosize'
+import RemoveIcon from '@material-ui/icons/Remove'
+import {nanoid} from 'nanoid'
 import {$Warning, mqMax} from '../../shared/utils'
 import {dashify} from '../../lib/dashify'
 import {spacefy} from '../../lib/spacefy'
@@ -14,9 +19,9 @@ import {
 import Dropzone from '../dropzone'
 import Progress from '../progress'
 import MultipleImageDialog from '../imageInForm'
-
 import type {ImportedImages} from '../../lib/apiTypes'
 import type {MyResponseType} from '../../../types/api'
+import {$Field} from './sharedCss/field'
 
 // We Need this work around to avoid reTyping... {Important}!!
 type CleaningType = {
@@ -59,6 +64,7 @@ const $SubmitDataContainer = styled.div`
 `
 
 const $CollectDataForm = styled.form`
+  width: 300px;
   ${flexCol}
   label {
     ${flexCol}
@@ -124,11 +130,106 @@ const $CollectDataForm = styled.form`
       background: var(--blackShade);
     }
   }
+  textarea {
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--black);
+    :focus-within,
+    :focus {
+      outline: none;
+      border-bottom-width: 3px;
+      border-color: var(--blackShade);
+    }
+    :valid {
+      color: var(--green);
+    }
+    :invalid {
+      color: var(--red);
+    }
+  }
 `
 const $BtnGroup = styled.div`
   display: flex;
   justify-content: space-evenly;
 `
+
+function UrlInput({
+  urlName,
+  handleBlur,
+}: {
+  urlName: string
+  handleBlur: (e: React.FocusEvent<HTMLInputElement>) => void
+}) {
+  const [state, setState] = useState('')
+
+  return (
+    <$Field>
+      <input
+        placeholder="this is to help control label"
+        type="url"
+        name="url"
+        value={state}
+        onChange={e => setState(e.target.value)}
+        onBlur={handleBlur}
+        id="url"
+      />
+      <label htmlFor="url">{urlName} Url</label>
+    </$Field>
+  )
+}
+
+function NewUrl({
+  urlName,
+  urlArray,
+  setArrayChange,
+}: {
+  urlName: string
+  urlArray: string[]
+  setArrayChange: React.Dispatch<React.SetStateAction<Array<string>>>
+}) {
+  return (
+    <>
+      <div style={{margin: '5px auto'}}>
+        <ButtonGroup variant="contained" color="primary">
+          <Button
+            aria-label="remove last image url"
+            onClick={() => {
+              urlArray.pop()
+              setArrayChange([...urlArray])
+            }}
+          >
+            <RemoveIcon />
+          </Button>
+          <Button
+            variant="outlined"
+            style={{background: 'transparent', color: 'var(--black)'}}
+          >
+            Add {urlName} Url
+          </Button>
+          <Button
+            aria-label={`add a new ${urlName} url`}
+            onClick={() => setArrayChange([...urlArray.concat('')])}
+          >
+            <AddIcon />
+          </Button>
+        </ButtonGroup>
+      </div>
+      {urlArray.length > 0 &&
+        urlArray.map((item, i) => {
+          return (
+            <UrlInput
+              key={nanoid()}
+              handleBlur={e => {
+                urlArray[i] = e.target.value
+                setArrayChange([...urlArray])
+              }}
+              urlName={urlName}
+            />
+          )
+        })}
+    </>
+  )
+}
 
 // TODO: We Need to Stop the Submitting if the doc already exist. So IMPORTANT
 export default function SubmitData() {
@@ -138,7 +239,8 @@ export default function SubmitData() {
   const [titlesCollectionST, setTitlesCollection] = useState<Array<string>>([])
 
   const [titleST, setTitle] = useState('')
-  const [urlST, setUrl] = useState('')
+  const [imageUrlsST, setImageUrls] = useState<Array<string>>([])
+  const [videoUrlsST, setVideoUrls] = useState<Array<string>>([])
   const [descriptionST, setDescription] = useState('')
   const [progressST, setProgress] = useState(0)
   const [responseST, setResponse] = useState<MyResponseType>({
@@ -168,11 +270,6 @@ export default function SubmitData() {
     return void 0
   }
 
-  useEffect(() => {
-    if (categoryST === 'choose') return
-    fetchAllTitles(categoryST)
-  }, [categoryST])
-
   async function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
 
@@ -197,10 +294,10 @@ export default function SubmitData() {
       url,
       description,
     } = e.currentTarget as typeof e.currentTarget & {
-      title: {value: typeof titleST}
-      category: {value: typeof categoryST}
-      url: {value: typeof urlST}
-      description: {value: typeof descriptionST}
+      title: HTMLInputElement
+      category: HTMLInputElement
+      url: HTMLInputElement
+      description: HTMLInputElement
     }
 
     const formData: {[key: string]: string} = {
@@ -239,22 +336,28 @@ export default function SubmitData() {
       (cloudinaryRes.data as unknown) as CleaningType,
     )
     const dataWithPictures: {
-      [key: string]: string | CleaningType
+      [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
       pictures: cloudinaryDataCleaned,
     }
     const data: {
-      [key: string]: string | CleaningType
+      [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
     }
 
-    console.log(titleDashed, data)
-
     const firestoreResponse = await handleDBCall({
       category: category.value,
-      data: category.value !== 'reels' ? dataWithPictures : data,
+      data: {
+        ...(category.value !== 'reels' ? dataWithPictures : data),
+        imgUrls: imageUrlsST.filter(function (item, index, inputArray) {
+          return inputArray.indexOf(item) == index && item !== ''
+        }),
+        videoUrls: videoUrlsST.filter(function (item, index, inputArray) {
+          return inputArray.indexOf(item) == index
+        }),
+      },
       titleDashed,
     })
 
@@ -263,7 +366,8 @@ export default function SubmitData() {
     if (firestoreResponse.isSuccessful) {
       // RESET Incase Event Reset didn't work
       setTitle('')
-      setUrl('')
+      setVideoUrls([])
+      setImageUrls([])
       setDescription('')
     }
     setPending(false)
@@ -272,9 +376,9 @@ export default function SubmitData() {
 
   return (
     <>
-      {/* <Head>
+      <header>
         <title>Submit Data</title>
-      </Head> */}
+      </header>
       <$SubmitDataContainer>
         {categoryST !== 'reels' && (
           <MultipleImageDialog
@@ -283,7 +387,9 @@ export default function SubmitData() {
               setAcceptedImages([...acceptedImagesST])
             }}
             onCleanDialogTwo={() => setRejectedImages([])}
+            titleOne="Accepted images"
             dialogOneArr={acceptedImagesST}
+            titleTwo="Rejected images"
             dialogTwoArr={rejectedImagesST}
           />
         )}
@@ -293,7 +399,12 @@ export default function SubmitData() {
             <select
               name="category"
               defaultValue={categoryST}
-              onBlur={e => setCategory(e.currentTarget.value)}
+              onBlur={async e => {
+                setCategory(e.currentTarget.value)
+                if (e.currentTarget.value !== 'choose') {
+                  await fetchAllTitles(e.currentTarget.value)
+                }
+              }}
               onChange={e => setCategory(e.currentTarget.value)}
               id="category"
               required
@@ -326,9 +437,9 @@ export default function SubmitData() {
               </optgroup>
             </select>
           </label>
-          <label htmlFor="title">
-            Title
+          <$Field>
             <input
+              placeholder="this is to help control label"
               type="text"
               name="title"
               value={titleST}
@@ -336,7 +447,8 @@ export default function SubmitData() {
               id="title"
               required
             />
-          </label>
+            <label htmlFor="title">Title</label>
+          </$Field>
           {categoryST !== 'reels' && (
             <Dropzone
               onAcceptedImages={newImages =>
@@ -345,29 +457,30 @@ export default function SubmitData() {
               onRejectedImages={newImages => setRejectedImages([...newImages])}
             />
           )}
-          <label htmlFor="url">
-            Image/Video Url
-            <input
-              type="url"
-              name="url"
-              value={urlST}
-              onChange={e => setUrl(e.target.value)}
-              id="url"
-            />
-          </label>
-          <label htmlFor="description">
+          <NewUrl
+            urlName="Video"
+            urlArray={videoUrlsST}
+            setArrayChange={setVideoUrls}
+          />
+          <NewUrl
+            urlName="Image"
+            urlArray={imageUrlsST}
+            setArrayChange={setImageUrls}
+          />
+
+          <label style={{marginTop: '1.2rem '}} htmlFor="description">
             Description
-            <textarea
-              name="description"
-              value={descriptionST}
-              onChange={e => setDescription(e.target.value)}
-              id="description"
-              cols={30}
-              rows={10}
-            />
           </label>
+          <TextareaAutosize
+            name="description"
+            value={descriptionST}
+            onChange={e => setDescription(e.target.value)}
+            id="description"
+          />
           {responseST.error && (
-            <$Warning role="alert">{responseST.error.message}</$Warning>
+            <$Warning marginBottom="10" role="alert">
+              {responseST.error.message}
+            </$Warning>
           )}
           {progressST > 0 && <Progress progress={progressST} />}
           <$BtnGroup>
@@ -375,6 +488,7 @@ export default function SubmitData() {
               style={{
                 background: !isPending ? 'var(--green)' : 'var(--red)',
                 color: 'var(--lightGray)',
+                margin: '1.2rem 0',
               }}
               type="submit"
               variant="contained"

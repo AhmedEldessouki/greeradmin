@@ -43,22 +43,59 @@ const $ChildWrapper = styled.div`
   overflow-y: scroll;
 `
 
+function ImageDialog({
+  children,
+  title,
+  showDialog,
+  changeShowDialog,
+}: {
+  children: React.ReactNode
+  title: string
+  showDialog: boolean
+  changeShowDialog: () => void
+}) {
+  return (
+    <$ImageDialogWrapper>
+      <span style={{textAlign: 'center', padding: '5px'}}>{title}</span>
+      <Button variant="contained" onClick={changeShowDialog}>
+        <Arrow direction={showDialog ? 'up' : 'down'} />
+      </Button>
+      {showDialog && <$ChildWrapper>{children}</$ChildWrapper>}
+    </$ImageDialogWrapper>
+  )
+}
+
+function ImageInForm({src}: {src: string}) {
+  return <$ImageWrapper imgSrc={src} />
+}
+
 function MultipleImageDialog({
   onDelDialogOne,
   onCleanDialogTwo,
+  titleOne,
+  titleTwo,
   dialogOneArr,
   dialogTwoArr,
 }: {
   onDelDialogOne: (index: number) => void
   onCleanDialogTwo: () => void
+  titleOne: string
+  titleTwo: string
   dialogOneArr: Array<{[key: string]: unknown; preview: string}>
   dialogTwoArr: Array<{[key: string]: unknown; preview: string}>
 }) {
   const [showDialogOne, setShowDialogOne] = useState(false)
   const [showDialogTwo, setShowDialogTwo] = useState(false)
   return (
-    <div style={{display: 'flex', flexDirection: 'column', margin: '20px'}}>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        margin: '20px',
+      }}
+    >
       <ImageDialog
+        title={titleOne}
         showDialog={showDialogOne}
         changeShowDialog={() => {
           setShowDialogTwo(false)
@@ -77,6 +114,7 @@ function MultipleImageDialog({
         ))}
       </ImageDialog>
       <ImageDialog
+        title={titleTwo}
         showDialog={showDialogTwo}
         changeShowDialog={() => {
           setShowDialogOne(false)
@@ -96,29 +134,6 @@ function MultipleImageDialog({
       </ImageDialog>
     </div>
   )
-}
-
-function ImageDialog({
-  children,
-  showDialog,
-  changeShowDialog,
-}: {
-  children: React.ReactNode
-  showDialog: boolean
-  changeShowDialog: () => void
-}) {
-  return (
-    <$ImageDialogWrapper>
-      <Button variant="contained" onClick={changeShowDialog}>
-        <Arrow direction={showDialog ? 'up' : 'down'} />
-      </Button>
-      {showDialog && <$ChildWrapper>{children}</$ChildWrapper>}
-    </$ImageDialogWrapper>
-  )
-}
-
-function ImageInForm({src}: {src: string}) {
-  return <$ImageWrapper imgSrc={src} />
 }
 
 export default MultipleImageDialog
