@@ -376,9 +376,9 @@ export default function SubmitData() {
 
   return (
     <>
-      {/* <Head>
+      <header>
         <title>Submit Data</title>
-      </Head> */}
+      </header>
       <$SubmitDataContainer>
         {categoryST !== 'reels' && (
           <MultipleImageDialog
@@ -387,7 +387,9 @@ export default function SubmitData() {
               setAcceptedImages([...acceptedImagesST])
             }}
             onCleanDialogTwo={() => setRejectedImages([])}
+            titleOne="Accepted images"
             dialogOneArr={acceptedImagesST}
+            titleTwo="Rejected images"
             dialogTwoArr={rejectedImagesST}
           />
         )}
