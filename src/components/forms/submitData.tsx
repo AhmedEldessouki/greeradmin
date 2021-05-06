@@ -3,7 +3,11 @@ import React, {useState} from 'react'
 import {css} from '@emotion/react'
 import styled from '@emotion/styled'
 import Button from '@material-ui/core/Button'
-import {TextareaAutosize} from '@material-ui/core'
+import AddIcon from '@material-ui/icons/Add'
+import ButtonGroup from '@material-ui/core/ButtonGroup'
+import TextareaAutosize from '@material-ui/core/TextareaAutosize'
+import RemoveIcon from '@material-ui/icons/Remove'
+import {nanoid} from 'nanoid'
 import {$Warning, mqMax} from '../../shared/utils'
 import {dashify} from '../../lib/dashify'
 import {spacefy} from '../../lib/spacefy'
@@ -15,7 +19,6 @@ import {
 import Dropzone from '../dropzone'
 import Progress from '../progress'
 import MultipleImageDialog from '../imageInForm'
-
 import type {ImportedImages} from '../../lib/apiTypes'
 import type {MyResponseType} from '../../../types/api'
 import {$Field} from './sharedCss/field'
@@ -150,6 +153,65 @@ const $BtnGroup = styled.div`
   justify-content: space-evenly;
 `
 
+function NewUrl({
+  urlName,
+  urlArray,
+  onArrayChange,
+}: {
+  urlName: string
+  urlArray: string[]
+  onArrayChange: (arg: string[]) => void
+}) {
+  return (
+    <>
+      <div style={{margin: '5px auto'}}>
+        <ButtonGroup variant="contained" color="primary">
+          <Button
+            aria-label="remove last image url"
+            onClick={() => {
+              urlArray.pop()
+              onArrayChange([...urlArray])
+            }}
+          >
+            <RemoveIcon />
+          </Button>
+          <Button
+            variant="outlined"
+            style={{background: 'transparent', color: 'var(--black)'}}
+          >
+            Add {urlName} Url
+          </Button>
+          <Button
+            aria-label={`add a new ${urlName} url`}
+            onClick={() => onArrayChange([...urlArray.concat('')])}
+          >
+            <AddIcon />
+          </Button>
+        </ButtonGroup>
+      </div>
+      {urlArray.length > 0 &&
+        urlArray.map((item, i) => {
+          return (
+            <$Field key={nanoid()}>
+              <input
+                placeholder="this is to help control label"
+                type="url"
+                name="url"
+                value={item}
+                onChange={e => {
+                  urlArray[i] = e.target.value
+                  onArrayChange([...urlArray])
+                }}
+                id="url"
+              />
+              <label htmlFor="url">{urlName} Url</label>
+            </$Field>
+          )
+        })}
+    </>
+  )
+}
+
 // TODO: We Need to Stop the Submitting if the doc already exist. So IMPORTANT
 export default function SubmitData() {
   const [categoryST, setCategory] = useState('Choose Category')
@@ -158,7 +220,8 @@ export default function SubmitData() {
   const [titlesCollectionST, setTitlesCollection] = useState<Array<string>>([])
 
   const [titleST, setTitle] = useState('')
-  const [urlST, setUrl] = useState('')
+  const [imageUrlsST, setImageUrls] = useState<Array<string>>([])
+  const [videoUrlsST, setVideoUrls] = useState<Array<string>>([])
   const [descriptionST, setDescription] = useState('')
   const [progressST, setProgress] = useState(0)
   const [responseST, setResponse] = useState<MyResponseType>({
@@ -185,7 +248,6 @@ export default function SubmitData() {
     if (data) {
       setTitlesCollection(data.map(obj => obj.title))
     }
-    console.log(titlesCollectionST)
     return void 0
   }
 
@@ -213,10 +275,10 @@ export default function SubmitData() {
       url,
       description,
     } = e.currentTarget as typeof e.currentTarget & {
-      title: {value: typeof titleST}
-      category: {value: typeof categoryST}
-      url: {value: typeof urlST}
-      description: {value: typeof descriptionST}
+      title: HTMLInputElement
+      category: HTMLInputElement
+      url: HTMLInputElement
+      description: HTMLInputElement
     }
 
     const formData: {[key: string]: string} = {
@@ -255,18 +317,20 @@ export default function SubmitData() {
       (cloudinaryRes.data as unknown) as CleaningType,
     )
     const dataWithPictures: {
-      [key: string]: string | CleaningType
+      [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
+      imgUrls: imageUrlsST,
+      videoUrls: videoUrlsST,
       pictures: cloudinaryDataCleaned,
     }
     const data: {
-      [key: string]: string | CleaningType
+      [key: string]: string | CleaningType | string[]
     } = {
       ...formDataCleaned,
+      imgUrls: imageUrlsST,
+      videoUrls: videoUrlsST,
     }
-
-    console.log(titleDashed, data)
 
     const firestoreResponse = await handleDBCall({
       category: category.value,
@@ -279,7 +343,8 @@ export default function SubmitData() {
     if (firestoreResponse.isSuccessful) {
       // RESET Incase Event Reset didn't work
       setTitle('')
-      setUrl('')
+      setVideoUrls([])
+      setImageUrls([])
       setDescription('')
     }
     setPending(false)
@@ -367,17 +432,17 @@ export default function SubmitData() {
               onRejectedImages={newImages => setRejectedImages([...newImages])}
             />
           )}
-          <$Field>
-            <input
-              placeholder="this is to help control label"
-              type="url"
-              name="url"
-              value={urlST}
-              onChange={e => setUrl(e.target.value)}
-              id="url"
-            />
-            <label htmlFor="url">Image/Video Url</label>
-          </$Field>
+          <NewUrl
+            urlName="Video"
+            urlArray={videoUrlsST}
+            onArrayChange={arg => setVideoUrls([...arg])}
+          />
+          <NewUrl
+            urlName="Image"
+            urlArray={imageUrlsST}
+            onArrayChange={arg => setImageUrls([...arg])}
+          />
+
           <label style={{marginTop: '1.2rem '}} htmlFor="description">
             Description
           </label>
