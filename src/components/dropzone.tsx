@@ -8,14 +8,13 @@ const $Container = styled.div<{isDragActive: boolean}>`
   display: flex;
   place-items: center;
   place-content: center;
-  border: 8px dashed
+  border: 4px dashed
     ${({isDragActive}) => (isDragActive ? `var(--blue)` : `var(--black)`)};
   height: 200px;
   text-align: center;
   cursor: pointer;
   margin: 18px;
   padding: 0;
-  border-radius: var(--roundness);
   :hover,
   :focus {
     border-color: var(--blue);
