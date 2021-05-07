@@ -1,25 +1,48 @@
-name: Deploy to Firebase Hosting on PR
-'on': pull_request
+name: Deploy to Firebase Hosting on merge
+'on':
+  push:
+    branches:
+      - main
 jobs:
-  create-envfile:
+  setup:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v2
+
+      - name: ⎔ Setup node
         uses: actions/setup-node@v1
-      - name: Make envfile
-        uses: SpicyPizza/create-envfile@v1
+
+      - name: Cache node modules
+        id: cache
+        uses: actions/cache@v2
         with:
-          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
-          REACT_APP_FIREBASE_PROJECT_ID:
-            ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
-          REACT_APP_FIREBASE_SENDER_ID: ${{ secrets.APP_FIREBASE_SENDER_ID }}
-          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
-          REACT_APP_FIREBASE_MEASUREMENT_ID:
-            ${{ secrets.REACT_APP_FIREBASE_MEASUREMENT_ID }}
-          REACT_APP_RECAPTCHA_KEY: ${{ secrets.REACT_APP_RECAPTCHA_KEY }}
-          REACT_APP_CLOUDINARY_CLOUD_NAME:
-            ${{ secrets.REACT_APP_CLOUDINARY_CLOUD_NAME }}
-          REACT_APP_CLOUDINARY_KEY: ${{ secrets.REACT_APP_CLOUDINARY_KEY }}
-          directory: './'
-          file_name: '.env'
+          path: node_modules
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-modules-
+
+      - name: Install packages
+        run: |
+          npm config set //npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}
+          yarn install --frozen-lockfile
+        env:
+           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      - name: 💡 Run lint script
+        run: npm run ci-lint
+
+      - name: 🛠 Run build script
+        run: CI='' yarn build
+
+      - name: ⚡ Deploy
+      - uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount:
+            '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREER_C_M }}'
+          channelId: live
+          projectId: greer-c-m
+        env:
+          FIREBASE_CLI_PREVIEWS: hostingchannels
