@@ -26,14 +26,11 @@ jobs:
          run: yarn install --frozen-lockfile
          if: steps.cache.outputs.cache-hit != 'true'
 
-       - name: 💡 Run lint script
-         run: npm run ci-lint
-
        - name: 🛠 Run build script
          run: CI='' yarn build
 
        - name: ⚡ Deploy
-       - uses: FirebaseExtended/action-hosting-deploy@v0
+         uses: FirebaseExtended/action-hosting-deploy@v0
          with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount:
@@ -42,3 +39,12 @@ jobs:
           projectId: greer-c-m
          env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
+          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
+          REACT_APP_FIREBASE_SENDER_ID: ${{ secrets.APP_FIREBASE_SENDER_ID }}
+          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
+          REACT_APP_FIREBASE_MEASUREMENT_ID: ${{ secrets.REACT_APP_FIREBASE_MEASUREMENT_ID }}
+          REACT_APP_RECAPTCHA_KEY: ${{ secrets.REACT_APP_RECAPTCHA_KEY }}
+          REACT_APP_CLOUDINARY_CLOUD_NAME: ${{ secrets.REACT_APP_CLOUDINARY_CLOUD_NAME }}
+          REACT_APP_CLOUDINARY_KEY: ${{ secrets.REACT_APP_CLOUDINARY_KEY }}
+
