@@ -30,7 +30,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: 💡 Run lint script
-        run: npm run lint:ci
+        run: npm run ci-lint
 
       - name: 🛠 Run build script
         run: npm run build
