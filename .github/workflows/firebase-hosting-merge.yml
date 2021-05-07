@@ -23,11 +23,8 @@ jobs:
             ${{ runner.os }}-modules-
 
       - name: Install packages
-        run: |
-          npm config set //npm.fontawesome.com/:_authToken=${FONTAWESOME_NPM_AUTH_TOKEN}
+        run: 
           yarn install --frozen-lockfile
-        env:
-           FONTAWESOME_NPM_AUTH_TOKEN: ${{ secrets.FONTAWESOME_NPM_AUTH_TOKEN }}
         if: steps.cache.outputs.cache-hit != 'true'
 
       - name: 💡 Run lint script
