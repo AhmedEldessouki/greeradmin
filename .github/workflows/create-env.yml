@@ -1,5 +1,8 @@
-name: Create .env
-'on': pull_request
+name: Env Vars
+'on':
+  push:
+    branches:
+      - main
 jobs:
   create-envfile:
     runs-on: ubuntu-latest
