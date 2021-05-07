@@ -7,39 +7,38 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v2
+       - name: ⬇️ Checkout repo
+         uses: actions/checkout@v2
 
-      - name: ⎔ Setup node
-        uses: actions/setup-node@v1
+       - name: ⎔ Setup node
+         uses: actions/setup-node@v1
 
-      - name: Cache node modules
-        id: cache
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-modules-
+       - name: Cache node modules
+         id: cache
+         uses: actions/cache@v2
+         with:
+           path: node_modules
+           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+           restore-keys: |
+             ${{ runner.os }}-modules-
 
-      - name: Install packages
-        run: 
-          yarn install --frozen-lockfile
-        if: steps.cache.outputs.cache-hit != 'true'
+       - name: Install packages
+         run: yarn install --frozen-lockfile
+         if: steps.cache.outputs.cache-hit != 'true'
 
-      - name: 💡 Run lint script
-        run: npm run ci-lint
+       - name: 💡 Run lint script
+         run: npm run ci-lint
 
-      - name: 🛠 Run build script
-        run: CI='' yarn build
+       - name: 🛠 Run build script
+         run: CI='' yarn build
 
-      - name: ⚡ Deploy
-      - uses: FirebaseExtended/action-hosting-deploy@v0
-        with:
+       - name: ⚡ Deploy
+       - uses: FirebaseExtended/action-hosting-deploy@v0
+         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
           firebaseServiceAccount:
             '${{ secrets.FIREBASE_SERVICE_ACCOUNT_GREER_C_M }}'
           channelId: live
           projectId: greer-c-m
-        env:
+         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
