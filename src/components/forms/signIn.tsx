@@ -75,7 +75,7 @@ const SignInForm = ({
     if (error) {
       setSignInFailed(error)
     }
-    setUser(user?.user)
+    setUser(user?.user ?? null)
     setPending(false)
   }
 
